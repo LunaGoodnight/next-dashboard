@@ -1,8 +1,7 @@
 "use client";
 import { useTheme } from "next-themes";
 export const ThemeButton = () => {
-  const { systemTheme, theme, setTheme } = useTheme();
-  const currentTheme = theme === "system" ? systemTheme : theme;
+  const { theme, setTheme } = useTheme();
 
   return (
     <button
