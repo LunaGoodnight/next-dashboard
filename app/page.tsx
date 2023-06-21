@@ -1,34 +1,9 @@
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faUser, faBell } from "@fortawesome/free-solid-svg-icons";
-import { ThemeButton } from "@/app/ThemeButton";
-import { SearchBlock } from "@/app/SearchBlock";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <div className="flex w-full justify-between bg-white">
-        <div className="p-6 w-full flex justify-between">
-          <div className="flex justify-between items-center w-52">
-            <div className="font-bold text-indigo-900 text-3xl dark:text-yellow-300">
-              LunaAdmin
-            </div>
-
-            <FontAwesomeIcon
-              className="dark:text-white text-indigo"
-              icon={faBars}
-            />
-          </div>
-          <ThemeButton />
-          <div className="flex gap-5 items-center">
-            <SearchBlock />
-            <FontAwesomeIcon className="text-blue-500" icon={faBell} />
-            <FontAwesomeIcon className="text-blue-500" icon={faUser} />
-          </div>
-        </div>
-      </div>
-
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+      <div className="z-10 w-full max-w-5xl items-center justify-between text-sm lg:flex">
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
           <a
             className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"

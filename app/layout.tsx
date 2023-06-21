@@ -3,6 +3,10 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { Poppins } from "next/font/google";
 import Providers from "@/app/Providers";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faBell, faUser } from "@fortawesome/free-solid-svg-icons";
+import { ThemeButton } from "@/app/ThemeButton";
+import { SearchBlock } from "@/app/SearchBlock";
 config.autoAddCss = false;
 
 const poppins = Poppins({
@@ -23,7 +27,29 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className="flex w-full justify-between bg-white">
+            <div className="p-6 w-full flex justify-between dark:bg-neutral-600">
+              <div className="flex justify-between items-center w-52">
+                <div className="font-bold text-indigo-900 text-3xl dark:text-yellow-300">
+                  LunaAdmin
+                </div>
+                <FontAwesomeIcon
+                  className="text-indigo dark:text-yellow-300"
+                  icon={faBars}
+                />
+              </div>
+              <ThemeButton />
+              <div className="flex gap-5 items-center">
+                <SearchBlock />
+                <FontAwesomeIcon className="text-blue-500" icon={faBell} />
+                <FontAwesomeIcon className="text-blue-500" icon={faUser} />
+              </div>
+            </div>
+          </div>
+
+          {children}
+        </Providers>
       </body>
     </html>
   );
