@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faBell, faUser } from "@fortawesome/free-solid-svg-icons";
 import { ThemeButton } from "@/app/ThemeButton";
 import { SearchBlock } from "@/app/SearchBlock";
+import { Notification } from "@/app/Notification";
 config.autoAddCss = false;
 
 const poppins = Poppins({
@@ -39,10 +40,11 @@ export default function RootLayout({
                   icon={faBars}
                 />
               </div>
-              <ThemeButton />
+
               <div className="flex gap-5 items-center">
                 <SearchBlock />
-                <FontAwesomeIcon className="text-blue-500" icon={faBell} />
+                <ThemeButton />
+                <Notification />
                 <FontAwesomeIcon className="text-blue-500" icon={faUser} />
               </div>
             </div>
