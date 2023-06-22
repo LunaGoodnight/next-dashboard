@@ -10,10 +10,7 @@ export const ThemeButton = () => {
       onClick={() => (theme == "dark" ? setTheme("light") : setTheme("dark"))}
       className="transition-all duration-100"
     >
-      <FontAwesomeIcon
-        icon={faLightbulb}
-        className="text-blue-500 dark:text-yellow-300"
-      />
+      <FontAwesomeIcon icon={faLightbulb} className="text-[#adb4d2]-500" />
     </button>
   );
 };
