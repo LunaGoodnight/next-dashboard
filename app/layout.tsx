@@ -4,7 +4,8 @@ import { Poppins } from "next/font/google";
 import Providers from "@/app/Providers";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faBell, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { ThemeButton } from "@/app/ThemeButton";
 import { SearchBlock } from "@/app/SearchBlock";
 import { Notification } from "@/app/Notification";
@@ -45,7 +46,10 @@ export default function RootLayout({
                 <SearchBlock />
                 <ThemeButton />
                 <Notification />
-                <FontAwesomeIcon className="text-blue-500" icon={faUser} />
+                <FontAwesomeIcon
+                  className="text-blue-500"
+                  icon={faCircleUser}
+                />
               </div>
             </div>
           </div>

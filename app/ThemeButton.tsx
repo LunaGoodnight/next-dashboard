@@ -1,7 +1,7 @@
 "use client";
 import { useTheme } from "next-themes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
+import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
 export const ThemeButton = () => {
   const { theme, setTheme } = useTheme();
 
@@ -12,7 +12,7 @@ export const ThemeButton = () => {
     >
       <FontAwesomeIcon
         icon={faLightbulb}
-        className="text-indigo dark:text-yellow-300"
+        className="text-blue-500 dark:text-yellow-300"
       />
     </button>
   );
