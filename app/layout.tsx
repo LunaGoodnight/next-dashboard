@@ -56,14 +56,14 @@ export default function RootLayout({
               </div>
             </div>
             <div className="flex w-full">
-              <ul className="flex w-80 flex-col">
+              <ul className="flex w-60 flex-col shadow-md absolute left-0 h-max p-2">
                 {leftMenuList.map(({ name, icon }) => {
                   return (
                     <li key={name}>
-                      <Link href={name} className="flex gap-2.5">
+                      <Link href={name} className="flex gap-2.5 p-3">
                         <div>
                           <FontAwesomeIcon
-                            className="text-blue-500"
+                            className="text-[#adb4d2]-500"
                             icon={icon}
                           />
                         </div>
