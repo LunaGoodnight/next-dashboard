@@ -53,9 +53,7 @@ export default function RootLayout({
                 </div>
               </div>
             </div>
-            <div className="flex w-full">
-              <SidebarProvider /> {children}
-            </div>
+            <div className="flex w-full">{children}</div>
           </div>
         </Providers>
       </body>
