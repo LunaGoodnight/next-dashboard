@@ -1,4 +1,5 @@
 import "./globals.css";
+import { SideBar } from "@/app/SideBar";
 import { FaBeer } from "react-icons/fa";
 import { Poppins } from "next/font/google";
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
@@ -53,7 +54,10 @@ export default function RootLayout({
                 </div>
               </div>
             </div>
-            <div className="flex w-full">{children}</div>
+            <div className="flex w-full">
+              <SideBar />
+              {children}
+            </div>
           </div>
         </Providers>
       </body>
