@@ -38,7 +38,7 @@ export default function RootLayout({
                 <div className="flex justify-between items-center w-52">
                   <div className="font-bold text-indigo-900 text-3xl dark:text-yellow-300">
                     LunaAdmin
-                  </div>{" "}
+                  </div>
                   <FaBeer />
                   <HideMenuButton />
                 </div>
