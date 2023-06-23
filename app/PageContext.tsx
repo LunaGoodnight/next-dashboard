@@ -1,4 +1,4 @@
-import { createContext, ReactNode } from "react";
+import { createContext, ReactNode, useState } from "react";
 
 interface ISideBarContext {
   sideBarTextShow: boolean;
@@ -16,8 +16,14 @@ export const SideBarContextProvider = ({
 }: {
   children: ReactNode;
 }) => {
+  const [sideBarTextShow, setSideBarTextShow] = useState(
+    defaultState.sideBarTextShow
+  );
+  const toggleSideBarTextShow = () => {
+    setSideBarTextShow(!sideBarTextShow);
+  };
   return (
-    <SideBarContext.Provider value={{ sideBarTextShow: false }}>
+    <SideBarContext.Provider value={{ sideBarTextShow, toggleSideBarTextShow }}>
       {children}
     </SideBarContext.Provider>
   );
