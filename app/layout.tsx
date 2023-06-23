@@ -1,16 +1,16 @@
 import "./globals.css";
-import Link from "next/link";
-import "@fortawesome/fontawesome-svg-core/styles.css";
+import { FaBeer } from "react-icons/fa";
 import { Poppins } from "next/font/google";
-import Providers from "@/app/Providers";
-import { config } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { config } from "@fortawesome/fontawesome-svg-core";
+
+import { HideMenuButton } from "@/app/HideMenuButton";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { Notification } from "@/app/Notification";
 import { ThemeButton } from "@/app/ThemeButton";
 import { SearchBlock } from "@/app/SearchBlock";
-import { Notification } from "@/app/Notification";
-import { leftMenuList } from "@/app/_config/leftMenuList";
+import Providers from "@/app/Providers";
 config.autoAddCss = false;
 
 const poppins = Poppins({
@@ -38,11 +38,9 @@ export default function RootLayout({
                 <div className="flex justify-between items-center w-52">
                   <div className="font-bold text-indigo-900 text-3xl dark:text-yellow-300">
                     LunaAdmin
-                  </div>
-                  <FontAwesomeIcon
-                    className="text-[#adb4d2]-500"
-                    icon={faBars}
-                  />
+                  </div>{" "}
+                  <FaBeer />
+                  <HideMenuButton />
                 </div>
                 <div className="flex gap-5 items-center">
                   <SearchBlock />
@@ -56,28 +54,8 @@ export default function RootLayout({
               </div>
             </div>
             <div className="flex w-full">
-              <ul className="flex w-60 flex-col shadow-md absolute left-0 bottom-0 h-max p-2 bg-white top-[5rem] transition-all duration-150">
-                {leftMenuList.map(({ name, icon }) => {
-                  return (
-                    <li key={name}>
-                      <Link
-                        href={name}
-                        className="flex gap-2.5 p-3 rounded hover:bg-gray-50"
-                      >
-                        <div>
-                          <FontAwesomeIcon
-                            className="text-[#adb4d2]-500"
-                            icon={icon}
-                          />
-                        </div>
-                        {name}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
+              <SidebarProvider /> {children}
             </div>
-            {children}
           </div>
         </Providers>
       </body>
