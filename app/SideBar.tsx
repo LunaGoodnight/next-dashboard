@@ -1,21 +1,12 @@
 "use client";
 
-import Link from "next/link";
-import {
-  SideBarContextProvider,
-  useSideBarContextContext,
-} from "@/app/SideBarContextProvider";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { leftMenuList } from "@/app/_config/leftMenuList";
+import { useSideBarContextContext } from "@/app/SideBarContextProvider";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 export const SideBar = () => {
-  return <Menu />;
-};
-
-export const Menu = () => {
   const { sideBarTextShow } = useSideBarContextContext();
-
-  console.log("🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢", { sideBarTextShow });
   return (
     <ul className="flex w-60 flex-col shadow-md absolute left-0 bottom-0 h-max p-2 bg-white top-[5rem] transition-all duration-150">
       {leftMenuList.map(({ name, icon }) => {

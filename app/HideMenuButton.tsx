@@ -1,18 +1,15 @@
 "use client";
 
-import {
-  SideBarContextProvider,
-  useSideBarContextContext,
-} from "@/app/SideBarContextProvider";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useSideBarContextContext } from "@/app/SideBarContextProvider";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const HideMenuButton = () => {
   return <ToggleMenuButton />;
 };
 
 const ToggleMenuButton = () => {
-  const { toggleSideBarTextShow, sideBarTextShow } = useSideBarContextContext();
+  const { toggleSideBarTextShow } = useSideBarContextContext();
 
   return (
     <div>
