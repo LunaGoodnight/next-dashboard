@@ -1,18 +1,17 @@
-import "./globals.css";
+import { HideMenuButton } from "@/app/HideMenuButton";
+import { Notification } from "@/app/Notification";
+import Providers from "@/app/Providers";
+import { SearchBlock } from "@/app/SearchBlock";
 import { SideBar } from "@/app/SideBar";
 import { SideBarContextProvider } from "@/app/SideBarContextProvider";
-import { FaBeer } from "react-icons/fa";
-import { Poppins } from "next/font/google";
+import { ThemeButton } from "@/app/ThemeButton";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { config } from "@fortawesome/fontawesome-svg-core";
+import { Poppins } from "next/font/google";
+import "./globals.css";
 
-import { HideMenuButton } from "@/app/HideMenuButton";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-import { Notification } from "@/app/Notification";
-import { ThemeButton } from "@/app/ThemeButton";
-import { SearchBlock } from "@/app/SearchBlock";
-import Providers from "@/app/Providers";
 config.autoAddCss = false;
 
 const poppins = Poppins({
@@ -42,7 +41,6 @@ export default function RootLayout({
                     <div className="font-bold text-indigo-900 text-3xl dark:text-yellow-300">
                       LunaAdmin
                     </div>
-                    <FaBeer />
                     <HideMenuButton />
                   </div>
                   <div className="flex gap-5 items-center">
