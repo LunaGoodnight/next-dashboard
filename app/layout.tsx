@@ -1,5 +1,6 @@
 import "./globals.css";
 import { SideBar } from "@/app/SideBar";
+import { SideBarContextProvider } from "@/app/SideBarContextProvider";
 import { FaBeer } from "react-icons/fa";
 import { Poppins } from "next/font/google";
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
@@ -33,32 +34,34 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.className} bg-[#f6f9ff]`}>
         <Providers>
-          <div className="text-[#7b8190]">
-            <div className="flex w-full justify-between bg-white fixed top-0 z-20">
-              <div className="p-5 w-full flex justify-between dark:bg-neutral-600 shadow-md">
-                <div className="flex justify-between items-center w-52">
-                  <div className="font-bold text-indigo-900 text-3xl dark:text-yellow-300">
-                    LunaAdmin
+          <SideBarContextProvider>
+            <div className="text-[#7b8190]">
+              <div className="flex w-full justify-between bg-white fixed top-0 z-20">
+                <div className="p-5 w-full flex justify-between dark:bg-neutral-600 shadow-md">
+                  <div className="flex justify-between items-center w-52">
+                    <div className="font-bold text-indigo-900 text-3xl dark:text-yellow-300">
+                      LunaAdmin
+                    </div>
+                    <FaBeer />
+                    <HideMenuButton />
                   </div>
-                  <FaBeer />
-                  <HideMenuButton />
-                </div>
-                <div className="flex gap-5 items-center">
-                  <SearchBlock />
-                  <ThemeButton />
-                  <Notification />
-                  <FontAwesomeIcon
-                    className="text-[#adb4d2]-500"
-                    icon={faCircleUser}
-                  />
+                  <div className="flex gap-5 items-center">
+                    <SearchBlock />
+                    <ThemeButton />
+                    <Notification />
+                    <FontAwesomeIcon
+                      className="text-[#adb4d2]-500"
+                      icon={faCircleUser}
+                    />
+                  </div>
                 </div>
               </div>
+              <div className="flex w-full">
+                <SideBar />
+                {children}
+              </div>
             </div>
-            <div className="flex w-full">
-              <SideBar />
-              {children}
-            </div>
-          </div>
+          </SideBarContextProvider>
         </Providers>
       </body>
     </html>

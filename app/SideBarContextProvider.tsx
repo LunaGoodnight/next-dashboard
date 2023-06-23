@@ -1,8 +1,9 @@
-import { createContext, ReactNode, useState } from "react";
+"use client";
+import { createContext, ReactNode, useContext, useState } from "react";
 
 interface ISideBarContext {
   sideBarTextShow: boolean;
-  toggleSideBarTextShow?: (sideBarTextShow: boolean) => void;
+  toggleSideBarTextShow?: () => void;
 }
 
 const defaultState = {
@@ -10,7 +11,7 @@ const defaultState = {
 };
 
 const SideBarContext = createContext<ISideBarContext>(defaultState);
-
+export const useSideBarContextContext = () => useContext(SideBarContext);
 export const SideBarContextProvider = ({
   children,
 }: {
@@ -20,6 +21,8 @@ export const SideBarContextProvider = ({
     defaultState.sideBarTextShow
   );
   const toggleSideBarTextShow = () => {
+    console.log("🐹🐹🐹🐹🐹🐹🐹🐹🐹🐹🐹🐹🐹");
+    console.log({ sideBarTextShow });
     setSideBarTextShow(!sideBarTextShow);
   };
   return (
