@@ -21,8 +21,6 @@ export const SideBarContextProvider = ({
     defaultState.sideBarTextShow
   );
   const toggleSideBarTextShow = () => {
-    console.log("🐹🐹🐹🐹🐹🐹🐹🐹🐹🐹🐹🐹🐹");
-    console.log({ sideBarTextShow });
     setSideBarTextShow(!sideBarTextShow);
   };
   return (

@@ -5,12 +5,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const HideMenuButton = () => {
-  return <ToggleMenuButton />;
-};
-
-const ToggleMenuButton = () => {
   const { toggleSideBarTextShow } = useSideBarContextContext();
-
   return (
     <div>
       <FontAwesomeIcon
