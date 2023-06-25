@@ -11,6 +11,8 @@ import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
+const GTM_ID = "GTM-W7FMR2M";
 
 config.autoAddCss = false;
 
@@ -29,6 +31,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Script id="google-tag-manager" strategy="afterInteractive">
+        {`
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','${GTM_ID}');
+        `}
+      </Script>
       <body className={`${inter.className}  bg-[#f6f9ff]`}>
         <Providers>
           <SideBarContextProvider>
