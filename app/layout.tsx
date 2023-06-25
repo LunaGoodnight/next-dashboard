@@ -40,11 +40,6 @@ export default function RootLayout({
         })(window,document,'script','dataLayer','${GTM_ID}');
         `}
       </Script>
-      <noscript
-        dangerouslySetInnerHTML={{
-          __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display: none; visibility: hidden;"></iframe>`,
-        }}
-      />
       <body className={`${inter.className}  bg-[#f6f9ff]`}>
         <Providers>
           <SideBarContextProvider>

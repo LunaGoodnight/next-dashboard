@@ -8,7 +8,7 @@ import Link from "next/link";
 export const SideBar = () => {
   const { sideBarTextShow } = useSideBarContextContext();
   return (
-    <ul className="flex flex-col shadow-md pt-[5.5rem] h-max p-2 bg-white top-[5rem] w-1/5">
+    <ul className="flex flex-col shadow-md pt-[5.5rem] h-max p-2 bg-white top-[5rem]">
       {leftMenuList.map(({ name, icon }) => {
         return (
           <li key={name}>
