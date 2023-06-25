@@ -47,6 +47,14 @@ export const numberData = [
     thisMonth: 52168,
     icon: faMoneyBill1,
     lastMonth: 43854,
+    isMoney: true,
+  },
+  {
+    title: "New Member",
+    thisMonth: 336,
+    icon: faUser,
+    lastMonth: 423,
+    isMoney: false,
   },
 ];
 
@@ -54,7 +62,7 @@ export const DashboardChartSection = () => {
   return (
     <div className="flex gap-5">
       <div className="flex gap-5 flex-col">
-        {numberData.map(({ title, lastMonth, icon, thisMonth }) => {
+        {numberData.map(({ title, lastMonth, icon, thisMonth, isMoney }) => {
           const { isIncrease, percentage } = calculatePercentageChange(
             lastMonth,
             thisMonth
@@ -65,12 +73,15 @@ export const DashboardChartSection = () => {
               className="bg-white p-4 rounded text-left shadow-md"
             >
               <div className="flex items-start justify-between">
-                <h4 className="text-sm text-gray-400">Sales</h4>
+                <h4 className="text-sm text-gray-400">{title}</h4>
                 <div className="bg-amber-200 rounded w-6 h-6 flex items-center justify-center text-center text-yellow-600 text-sm">
                   <FontAwesomeIcon icon={faMoneyBill1} />
                 </div>
               </div>
-              <div className="text-2xl font-bold py-2">$559.25k</div>
+              <div className="text-2xl font-bold py-2">
+                {isMoney && "$ "}
+                {thisMonth}
+              </div>
               <div className="text-xs flex gap-2">
                 <i
                   className={`text-sky-400 ${
