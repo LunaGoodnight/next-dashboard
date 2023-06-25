@@ -1,4 +1,7 @@
 "use client";
+import { faMoneyBill1, faUser } from "@fortawesome/free-regular-svg-icons";
+import { Bar } from "react-chartjs-2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,7 +11,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Bar } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
 
 ChartJS.register(
@@ -22,15 +24,7 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
-  plugins: {
-    legend: {
-      position: "top" as const,
-    },
-    title: {
-      display: true,
-      text: "Chart.js Bar Chart",
-    },
-  },
+  plugins: {},
 };
 
 const labels = ["January", "February", "March", "April", "May", "June", "July"];
@@ -41,12 +35,7 @@ export const data = {
     {
       label: "Dataset 1",
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
-    },
-    {
-      label: "Dataset 2",
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      backgroundColor: "rgba(39,197,255,0.5)",
     },
   ],
 };
@@ -54,10 +43,21 @@ export const data = {
 export const DashboardChartSection = () => {
   return (
     <div className="flex gap-5">
-      <div className="bg-white p-2 rounded text-left">
-        <h4 className="text-sm font-bold">Sales</h4>
+      <div className="flex gap-5 flex-col">
+        <div className="bg-white p-4 rounded text-left shadow-md">
+          <h4 className="text-sm text-gray-400">Sales</h4>
+          <div className="bg-amber-200 rounded-full w-10 h-10 flex">
+            <FontAwesomeIcon icon={faMoneyBill1} />
+          </div>
+          <div className="text-2xl font-bold py-2">$559.25k</div>
+        </div>
+        <div className="bg-white p-4 rounded text-left shadow-md">
+          <h4 className="text-sm text-gray-400">New Member</h4>
+          <div className="text-2xl font-bold py-2">256</div>
+        </div>
       </div>
-      <div className="w-2/4 h-64 bg-white p-2 text-left rounded">
+
+      <div className="w-2/4 h-64 bg-white p-4 text-left rounded shadow-md">
         <Bar options={options} data={data} />
       </div>
     </div>
