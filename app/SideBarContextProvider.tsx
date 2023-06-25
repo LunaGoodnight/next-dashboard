@@ -7,7 +7,7 @@ interface ISideBarContext {
 }
 
 const defaultState = {
-  sideBarTextShow: false,
+  sideBarTextShow: true,
 };
 
 const SideBarContext = createContext<ISideBarContext>(defaultState);

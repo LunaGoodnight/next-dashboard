@@ -9,15 +9,17 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Poppins } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 
 config.autoAddCss = false;
 
 const poppins = Poppins({
-  weight: "400",
+  weight: "300",
   subsets: ["latin"],
 });
+// If loading a variable font, you don't need to specify the font weight
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -31,11 +33,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} bg-[#f6f9ff]`}>
+      <body className={`${inter.className}  bg-[#f6f9ff]`}>
         <Providers>
           <SideBarContextProvider>
             <div className="text-[#7b8190]">
-              <div className="flex w-full justify-between bg-white fixed top-0 z-20">
+              <header className="flex w-full justify-between bg-white fixed top-0 z-20">
                 <div className="p-5 w-full flex justify-between dark:bg-neutral-600 shadow-md">
                   <div className="flex justify-between items-center w-52">
                     <div className="font-bold text-indigo-900 text-3xl dark:text-yellow-300">
@@ -43,7 +45,7 @@ export default function RootLayout({
                     </div>
                     <HideMenuButton />
                   </div>
-                  <div className="flex gap-5 items-center">
+                  <nav className="flex gap-5 items-center">
                     <SearchBlock />
                     <ThemeButton />
                     <Notification />
@@ -51,9 +53,9 @@ export default function RootLayout({
                       className="text-[#adb4d2]-500"
                       icon={faCircleUser}
                     />
-                  </div>
+                  </nav>
                 </div>
-              </div>
+              </header>
               <div className="flex w-full">
                 <SideBar />
                 {children}
