@@ -48,7 +48,7 @@ const options: ApexOptions = {
 };
 export const RevenueBarChart = () => {
   return (
-    <div className="w-1/4 bg-white p-4 text-left rounded shadow-md max-h-[20rem] relative">
+    <div className="bg-white p-4 text-left rounded shadow-md max-h-[20rem] relative">
       <h4 className="text-sm text-gray-400 absolute top-3">Revenue</h4>
       <Chart type="bar" options={options} series={series} height={240} />
     </div>
