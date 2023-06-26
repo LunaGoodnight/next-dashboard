@@ -1,5 +1,6 @@
 "use client";
 
+import { AreaChart } from "@/app/AreaChart";
 import { RevenueBarChart } from "@/app/RevenueBarChart";
 import { numberData } from "@/src/config/numberData";
 import { calculatePercentageChange } from "@/src/utils/calculatePercentageChange";
@@ -7,8 +8,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const DashboardChartSection = () => {
   return (
-    <div className="flex gap-3 w-full">
-      <div className="flex flex-row w-2/4 gap-3 flex-wrap ">
+    <div className="flex gap-4 w-full">
+      <div className="grid gap-4 grid-cols-2 w-1/2">
         {numberData.map(
           ({
             title,
@@ -26,7 +27,7 @@ export const DashboardChartSection = () => {
             return (
               <div
                 key={title}
-                className="bg-white p-4 rounded text-left shadow-md w-[48.5%]"
+                className="bg-white p-4 rounded text-left shadow-md relative"
               >
                 <div className="flex items-start justify-between">
                   <h4 className="text-sm text-gray-400">{title}</h4>
@@ -40,7 +41,7 @@ export const DashboardChartSection = () => {
                   {isMoney && "$ "}
                   {thisMonth}
                 </div>
-                <div className="text-xs flex gap-2">
+                <div className="text-xs flex gap-2 absolute bottom-4">
                   <i
                     className={`${
                       isIncrease
@@ -49,7 +50,7 @@ export const DashboardChartSection = () => {
                     } font-bold`}
                   />
                   <span>
-                    {isIncrease ? "+" : "-"} {percentage}
+                    {isIncrease ? "+" : "-"} {percentage}%
                   </span>
                 </div>
               </div>
@@ -58,6 +59,7 @@ export const DashboardChartSection = () => {
         )}
       </div>
       <RevenueBarChart />
+      <AreaChart />
     </div>
   );
 };
