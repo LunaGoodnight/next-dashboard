@@ -2,10 +2,6 @@ import { ApexOptions } from "apexcharts";
 import Chart from "react-apexcharts";
 const series = [
   {
-    name: "Net Profit",
-    data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
-  },
-  {
     name: "Revenue",
     data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
   },
@@ -15,9 +11,13 @@ const series = [
   },
 ];
 const options: ApexOptions = {
+  colors: ["#62eed2", "#209ff2"],
   chart: {
     type: "bar",
-    height: 350,
+
+    toolbar: {
+      show: false,
+    },
   },
   plotOptions: {
     bar: {
@@ -28,11 +28,29 @@ const options: ApexOptions = {
   dataLabels: {
     enabled: false,
   },
+  xaxis: {
+    categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+    labels: {
+      style: {
+        colors: "#b4b4b4",
+      },
+    },
+  },
+  yaxis: {
+    show: false,
+  },
+  grid: {
+    show: false,
+  },
+  legend: {
+    show: false,
+  },
 };
 export const RevenueBarChart = () => {
   return (
-    <div className="w-2/4 bg-white p-4 text-left rounded shadow-md">
-      <Chart type="bar" options={options} series={series} />
+    <div className="w-2/4 bg-white p-4 text-left rounded shadow-md max-h-[20rem] relative">
+      <h4 className="text-sm text-gray-400 absolute top-3">Revenue</h4>
+      <Chart type="bar" options={options} series={series} height={240} />
     </div>
   );
 };
