@@ -29,15 +29,15 @@ const options: ApexOptions = {
     },
   },
   xaxis: {
-    categories: [
-      "01 Jan",
-      "02 Jan",
-      "03 Jan",
-      "04 Jan",
-      "05 Jan",
-      "06 Jan",
-      "07 Jan",
-    ],
+    // categories: [
+    //   "June",
+    //   "02 Jan",
+    //   "03 Jan",
+    //   "04 Jan",
+    //   "05 Jan",
+    //   "06 Jan",
+    //   "07 Jan",
+    // ],
   },
 };
 const series = [
