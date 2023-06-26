@@ -6,23 +6,22 @@ const options: ApexOptions = {
   chart: {
     type: "donut",
   },
-  responsive: [
-    {
-      breakpoint: 480,
-      options: {
-        chart: {
-          width: 200,
-        },
-        legend: {
-          position: "bottom",
-        },
-      },
+  legend: {
+    show: false,
+  },
+  dataLabels: {
+    style: {
+      fontFamily: "inherit",
+      fontWeight: 800,
     },
-  ],
+    dropShadow: {
+      enabled: false,
+    },
+  },
 };
 export const VisitedDonut = () => {
   return (
-    <div className="bg-white p-4 rounded text-left shadow-md relative w-2/4">
+    <div className="bg-white p-4 rounded text-left shadow-md relative w-2/6">
       <Chart type="donut" options={options} series={series} />
     </div>
   );

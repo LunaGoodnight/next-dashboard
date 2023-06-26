@@ -9,12 +9,13 @@ export const DashboardChartSection = () => {
   return (
     <div className="flex w-full flex-wrap">
       <NumberDataSection />
-      <div className="w-2/4 flex justify-between">
+      <div className="grid gap-4 grid-cols-2 w-2/4 pl-4">
         <RevenueBarChart />
         <AreaChart />
       </div>
-
-      <VisitedDonut />
+      <div className="pt-4 w-full">
+        <VisitedDonut />
+      </div>
     </div>
   );
 };
