@@ -1,6 +1,6 @@
 "use client";
 
-import { ChartJsBar } from "@/app/ChartJsBar";
+import { RevenueBarChart } from "@/app/RevenueBarChart";
 import { numberData } from "@/src/config/numberData";
 import { calculatePercentageChange } from "@/src/utils/calculatePercentageChange";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -42,10 +42,10 @@ export const DashboardChartSection = () => {
                 </div>
                 <div className="text-xs flex gap-2">
                   <i
-                    className={`text-sky-400 ${
+                    className={`${
                       isIncrease
-                        ? "after:content-['↗']"
-                        : "after:content-['↘️']"
+                        ? "text-sky-400 after:content-['↗']"
+                        : "text-red-400 after:content-['↘']"
                     } font-bold`}
                   />
                   <span>
@@ -57,10 +57,7 @@ export const DashboardChartSection = () => {
           }
         )}
       </div>
-
-      <div className="w-2/4 bg-white p-4 text-left rounded shadow-md">
-        <ChartJsBar />
-      </div>
+      <RevenueBarChart />
     </div>
   );
 };
