@@ -9,6 +9,10 @@ import {
   faCartShopping,
   faChartPie,
   faWandMagicSparkles,
+  faShareNodes,
+  faEnvelope,
+  faCalendarCheck,
+  faCircleInfo,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const leftMenuList = [
@@ -20,10 +24,9 @@ export const leftMenuList = [
   { name: "Management", icon: faTimeline, path: "/" },
   { name: "Chat", icon: faChartPie, path: "/" },
   { name: "Plugins", icon: faWandMagicSparkles, path: "/" },
-  { name: "Social", icon: faChartBar, path: "/" },
-  { name: "Support Desk", icon: faChartBar, path: "/" },
-  { name: "Email", icon: faChartBar, path: "/" },
-  { name: "Events", icon: faChartBar, path: "/" },
+  { name: "Social", icon: faShareNodes, path: "/" },
+  { name: "Email", icon: faEnvelope, path: "/" },
+  { name: "Events", icon: faCalendarCheck, path: "/" },
   { name: "Profile", icon: faAddressBook, path: "/" },
-  { name: "Faq", icon: faChartBar, path: "/" },
+  { name: "Faq", icon: faCircleInfo, path: "/" },
 ];
