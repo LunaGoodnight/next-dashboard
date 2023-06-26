@@ -11,7 +11,6 @@ export const numberData = [
     thisMonth: 52168,
     icon: faMoneyBill1,
     iconBackground: "bg-amber-400",
-    // iconColor: "text-[#8b939f]",
     iconColor: "text-white",
     lastMonth: 43854,
     isMoney: true,
@@ -22,7 +21,6 @@ export const numberData = [
     icon: faUser,
     iconBackground: "bg-indigo-200",
     iconColor: "text-white",
-
     lastMonth: 423,
     isMoney: false,
   },

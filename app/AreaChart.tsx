@@ -13,12 +13,9 @@ const options: ApexOptions = {
   dataLabels: {
     enabled: false,
   },
-  series: [
-    {
-      name: "Series 1",
-      data: [45, 52, 38, 45, 19, 23, 2],
-    },
-  ],
+  yaxis: {
+    show: false,
+  },
   fill: {
     type: "gradient",
     gradient: {
@@ -28,16 +25,16 @@ const options: ApexOptions = {
       stops: [0, 90, 100],
     },
   },
+  grid: {
+    show: false,
+  },
   xaxis: {
-    // categories: [
-    //   "June",
-    //   "02 Jan",
-    //   "03 Jan",
-    //   "04 Jan",
-    //   "05 Jan",
-    //   "06 Jan",
-    //   "07 Jan",
-    // ],
+    categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+    labels: {
+      style: {
+        colors: "#b4b4b4",
+      },
+    },
   },
 };
 const series = [

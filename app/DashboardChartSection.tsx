@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const DashboardChartSection = () => {
   return (
     <div className="flex gap-4 w-full">
-      <div className="grid gap-4 grid-cols-2 w-1/2">
+      <div className="grid gap-4 grid-cols-2 w-2/4">
         {numberData.map(
           ({
             title,
@@ -37,7 +37,7 @@ export const DashboardChartSection = () => {
                     <FontAwesomeIcon icon={icon} />
                   </div>
                 </div>
-                <div className="text-2xl font-bold py-2">
+                <div className="text-2xl font-bold pt-3">
                   {isMoney && "$ "}
                   {thisMonth}
                 </div>
@@ -58,6 +58,7 @@ export const DashboardChartSection = () => {
           }
         )}
       </div>
+
       <RevenueBarChart />
       <AreaChart />
     </div>
