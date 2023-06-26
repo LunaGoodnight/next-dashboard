@@ -9,6 +9,7 @@ const options: ApexOptions = {
   legend: {
     show: false,
   },
+  labels: ["data", "data", "data", "data", "data"],
   dataLabels: {
     style: {
       fontFamily: "inherit",
@@ -21,7 +22,10 @@ const options: ApexOptions = {
 };
 export const VisitedDonut = () => {
   return (
-    <div className="bg-white p-4 rounded text-left shadow-md relative w-2/6">
+    <div className="bg-white p-4 rounded text-left shadow-md relative w-2/6 pt-10">
+      <h4 className="text-sm text-gray-400 absolute top-3">
+        Store Visits by Source
+      </h4>
       <Chart type="donut" options={options} series={series} />
     </div>
   );

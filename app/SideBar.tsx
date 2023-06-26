@@ -1,15 +1,15 @@
 "use client";
 
+import Link from "next/link";
 import { leftMenuList } from "@/app/_config/leftMenuList";
 import { useSideBarContextContext } from "@/app/SideBarContextProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
 
 export const SideBar = () => {
   const { sideBarTextShow } = useSideBarContextContext();
   return (
     <ul className="flex flex-col shadow-md pt-[5.5rem] h-max p-2 bg-white top-[5rem]">
-      {leftMenuList.map(({ name, icon, path }) => {
+      {leftMenuList.map(({ name, icon, path, iconSource }) => {
         return (
           <li key={name}>
             <Link href={path} className="flex p-3 rounded hover:bg-gray-50">
