@@ -1,6 +1,14 @@
 import { ApexOptions } from "apexcharts";
 
-export const productFunnelOptions: ApexOptions = {
+type Options = ApexOptions & {
+  plotOptions: {
+    bar: {
+      isFunnel: boolean;
+    };
+  };
+};
+
+export const productFunnelOptions: Options = {
   chart: {
     type: "bar",
     toolbar: {
