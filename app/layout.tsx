@@ -42,33 +42,31 @@ export default function RootLayout({
       </Script>
       <body className={`${inter.className}  bg-[#f6f9ff] overflow-hidden `}>
         <Providers>
-          <SideBarContextProvider>
-            <div className="text-[#7b8190]">
-              <header className="flex w-full justify-between bg-white fixed top-0 z-20">
-                <div className="p-5 w-full flex justify-between dark:bg-neutral-600 shadow-md">
-                  <div className="flex justify-between items-center w-2/12">
-                    <div className="font-bold text-indigo-900 text-3xl dark:text-yellow-300">
-                      LunaAdmin
-                    </div>
-                    <HideMenuButton />
+          <div className="text-[#7b8190]">
+            <header className="flex w-full justify-between bg-white fixed top-0 z-20">
+              <div className="p-5 w-full flex justify-between dark:bg-neutral-600 shadow-md">
+                <div className="flex justify-between items-center w-2/12">
+                  <div className="font-bold text-indigo-900 text-3xl dark:text-yellow-300">
+                    LunaAdmin
                   </div>
-                  <nav className="flex gap-5 items-center">
-                    <SearchBlock />
-                    <ThemeButton />
-                    <Notification />
-                    <FontAwesomeIcon
-                      className="text-[#adb4d2]-500"
-                      icon={faCircleUser}
-                    />
-                  </nav>
+                  <HideMenuButton />
                 </div>
-              </header>
-              <div className="flex w-full min-h-screen">
-                <SideBar />
-                {children}
+                <nav className="flex gap-5 items-center">
+                  <SearchBlock />
+                  <ThemeButton />
+                  <Notification />
+                  <FontAwesomeIcon
+                    className="text-[#adb4d2]-500"
+                    icon={faCircleUser}
+                  />
+                </nav>
               </div>
+            </header>
+            <div className="flex w-full min-h-screen">
+              <SideBar />
+              {children}
             </div>
-          </SideBarContextProvider>
+          </div>
         </Providers>
       </body>
     </html>

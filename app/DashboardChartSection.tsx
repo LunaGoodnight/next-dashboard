@@ -18,6 +18,10 @@ export const DashboardChartSection = async () => {
       <div className="pt-4 w-full flex gap-4">
         <VisitedDonut />
         <MockNewsFeed />
+        <div className="w-2/6 bg-white p-4 rounded text-left shadow-md relative">
+          <h4 className="text-sm text-gray-400 absolute top-3">News Feed</h4>
+          <div>adfasdf</div>
+        </div>
       </div>
     </div>
   );
