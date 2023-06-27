@@ -1,6 +1,6 @@
 import { HideMenuButton } from "@/app/HideMenuButton";
 import { Notification } from "@/app/Notification";
-import Providers from "@/app/Providers";
+import ThemeProviders from "@/app/ThemeProviders";
 import { SearchBlock } from "@/app/SearchBlock";
 import { SideBar } from "@/app/SideBar";
 import { SideBarContextProvider } from "@/app/SideBarContextProvider";
@@ -41,33 +41,35 @@ export default function RootLayout({
         `}
       </Script>
       <body className={`${inter.className}  bg-[#f6f9ff] overflow-hidden `}>
-        <Providers>
-          <div className="text-[#7b8190]">
-            <header className="flex w-full justify-between bg-white fixed top-0 z-20">
-              <div className="p-5 w-full flex justify-between dark:bg-neutral-600 shadow-md">
-                <div className="flex justify-between items-center w-2/12">
-                  <div className="font-bold text-indigo-900 text-3xl dark:text-yellow-300">
-                    LunaAdmin
+        <ThemeProviders>
+          <SideBarContextProvider>
+            <div className="text-[#7b8190]">
+              <header className="flex w-full justify-between bg-white fixed top-0 z-20">
+                <div className="p-5 w-full flex justify-between dark:bg-neutral-600 shadow-md">
+                  <div className="flex justify-between items-center w-2/12">
+                    <div className="font-bold text-indigo-900 text-3xl dark:text-yellow-300">
+                      LunaAdmin
+                    </div>
+                    <HideMenuButton />
                   </div>
-                  <HideMenuButton />
+                  <nav className="flex gap-5 items-center">
+                    <SearchBlock />
+                    <ThemeButton />
+                    <Notification />
+                    <FontAwesomeIcon
+                      className="text-[#adb4d2]-500"
+                      icon={faCircleUser}
+                    />
+                  </nav>
                 </div>
-                <nav className="flex gap-5 items-center">
-                  <SearchBlock />
-                  <ThemeButton />
-                  <Notification />
-                  <FontAwesomeIcon
-                    className="text-[#adb4d2]-500"
-                    icon={faCircleUser}
-                  />
-                </nav>
+              </header>
+              <div className="flex w-full min-h-screen">
+                <SideBar />
+                {children}
               </div>
-            </header>
-            <div className="flex w-full min-h-screen">
-              <SideBar />
-              {children}
             </div>
-          </div>
-        </Providers>
+          </SideBarContextProvider>
+        </ThemeProviders>
       </body>
     </html>
   );
