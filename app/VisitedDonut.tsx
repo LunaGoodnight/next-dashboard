@@ -20,6 +20,9 @@ const options: ApexOptions = {
       enabled: false,
     },
   },
+  stroke: {
+    show: false,
+  },
 };
 export const VisitedDonut = () => {
   return (
