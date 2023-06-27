@@ -1,17 +1,7 @@
 "use client";
-import { createContext, ReactNode, useContext, useState } from "react";
+import { defaultState, SideBarContext } from "@/app/useSideBarContextContext";
+import { ReactNode, useState, useMemo, useCallback } from "react";
 
-interface ISideBarContext {
-  sideBarTextShow: boolean;
-  toggleSideBarTextShow?: () => void;
-}
-
-const defaultState = {
-  sideBarTextShow: true,
-};
-
-const SideBarContext = createContext<ISideBarContext>(defaultState);
-export const useSideBarContextContext = () => useContext(SideBarContext);
 export const SideBarContextProvider = ({
   children,
 }: {
@@ -20,11 +10,17 @@ export const SideBarContextProvider = ({
   const [sideBarTextShow, setSideBarTextShow] = useState(
     defaultState.sideBarTextShow
   );
-  const toggleSideBarTextShow = () => {
+  const toggleSideBarTextShow = useCallback(() => {
     setSideBarTextShow(!sideBarTextShow);
-  };
+  }, [sideBarTextShow]);
+
+  const sideBarValue = useMemo(
+    () => ({ sideBarTextShow, toggleSideBarTextShow }),
+    [sideBarTextShow, toggleSideBarTextShow]
+  );
+
   return (
-    <SideBarContext.Provider value={{ sideBarTextShow, toggleSideBarTextShow }}>
+    <SideBarContext.Provider value={sideBarValue}>
       {children}
     </SideBarContext.Provider>
   );

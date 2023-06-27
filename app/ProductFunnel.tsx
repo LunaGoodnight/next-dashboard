@@ -110,17 +110,18 @@ export const ProductFunnel = () => {
     <div className="w-2/6 bg-white p-4 rounded text-left shadow-md relative">
       <h4 className="text-sm text-gray-400 absolute top-3">Product sell</h4>
       <Chart type="bar" options={options} series={series} height={240} />
-      <div className="text-gray-500 text-sm">Top selling products:</div>
-      <ul>
+      <div className="text-gray-500 text-sm pb-2">Top selling products:</div>
+      <ul className="text-sm">
         {productData
           .slice()
           .sort((a, b) => b.value - a.value)
           .slice(0, 3)
           .map(({ name, value }) => {
+            const percentage = (value / totalSells) * 100;
             return (
-              <li key={name}>
-                {name}
-                {(value / totalSells) * 100} %
+              <li key={name} className="flex gap-2">
+                <span className="font-bold">{name}:</span>
+                <span>{percentage.toFixed(2)} %</span>
               </li>
             );
           })}

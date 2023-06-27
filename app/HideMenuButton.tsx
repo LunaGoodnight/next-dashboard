@@ -1,6 +1,6 @@
 "use client";
 
-import { useSideBarContextContext } from "@/app/SideBarContextProvider";
+import { useSideBarContextContext } from "@/app/useSideBarContextContext";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
