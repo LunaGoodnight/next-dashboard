@@ -32,7 +32,7 @@ export const MockNewsFeed = () => {
       <h4 className="text-sm text-gray-400 absolute top-3">News Feed</h4>
       <button
         type="button"
-        className="bg-blue-300 p-2 absolute right-2 top-2 text-white text-sm rounded"
+        className="absolute right-3 top-3 text-sm rounded text-gray-500 cursor-pointer"
       >
         Edit
       </button>
@@ -41,7 +41,7 @@ export const MockNewsFeed = () => {
           return (
             <li key={link}>
               <a
-                className="hover:text-gray-700 py-8"
+                className="hover:text-gray-700 py-14"
                 target="_blank"
                 href={link}
               >
