@@ -3,7 +3,6 @@ import { ApexOptions } from "apexcharts";
 export const productFunnelOptions: ApexOptions = {
   chart: {
     type: "bar",
-
     toolbar: {
       show: false,
     },
