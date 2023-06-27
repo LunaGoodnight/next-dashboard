@@ -1,5 +1,7 @@
+import dynamic from "next/dynamic";
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 import { ApexOptions } from "apexcharts";
-import Chart from "react-apexcharts";
+
 const series = [
   {
     name: "Revenue",

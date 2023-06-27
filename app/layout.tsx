@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -40,7 +40,7 @@ export default function RootLayout({
         })(window,document,'script','dataLayer','${GTM_ID}');
         `}
       </Script>
-      <body className={`${inter.className}  bg-[#f6f9ff] overflow-hidden`}>
+      <body className={`${inter.className}  bg-[#f6f9ff] overflow-hidden `}>
         <Providers>
           <SideBarContextProvider>
             <div className="text-[#7b8190]">

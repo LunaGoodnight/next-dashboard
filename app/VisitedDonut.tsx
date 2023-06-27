@@ -1,5 +1,6 @@
 import { ApexOptions } from "apexcharts";
-import Chart from "react-apexcharts";
+import dynamic from "next/dynamic";
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const series = [44, 55, 41, 17, 15];
 const options: ApexOptions = {
