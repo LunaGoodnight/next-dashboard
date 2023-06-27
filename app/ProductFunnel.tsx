@@ -103,17 +103,12 @@ const options: ApexOptions = {
   },
 };
 
-function calculatePercentages(numbers: number[]): number[] {
-  const total: number = numbers.reduce((sum, num) => sum + num, 0);
-  return numbers.map((num) => (num / total) * 100);
-}
-
 export const ProductFunnel = () => {
   const totalSells = productData.reduce((sum, num) => sum + num.value, 0);
 
   return (
     <div className="w-2/6 bg-white p-4 rounded text-left shadow-md relative">
-      <h4 className="text-sm text-gray-400 absolute top-3">Product</h4>
+      <h4 className="text-sm text-gray-400 absolute top-3">Product sell</h4>
       <Chart type="bar" options={options} series={series} height={240} />
       <div className="text-gray-500 text-sm">Top selling products:</div>
       <ul>
