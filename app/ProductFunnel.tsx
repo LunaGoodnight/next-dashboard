@@ -2,9 +2,44 @@ import dynamic from "next/dynamic";
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 import { ApexOptions } from "apexcharts";
 
+const productData = [
+  {
+    name: "Grains",
+    value: 1380,
+  },
+  {
+    name: "Fruits & Vegetables",
+    value: 1100,
+  },
+  {
+    name: "Dairy",
+    value: 990,
+  },
+  {
+    name: "Beans & Legumes",
+    value: 880,
+  },
+  {
+    name: "Meat",
+    value: 740,
+  },
+  {
+    name: "Healthy Fats",
+    value: 548,
+  },
+  {
+    name: "Processed Foods",
+    value: 330,
+  },
+  {
+    name: "Sweets",
+    value: 200,
+  },
+];
+
 const series = [
   {
-    name: "",
+    name: "Product sells",
     data: [200, 330, 548, 740, 880, 990, 1100, 1380],
   },
 ];
@@ -51,7 +86,6 @@ const options: ApexOptions = {
     },
   },
 
-
   xaxis: {
     categories: [
       "Sweets",
@@ -68,12 +102,34 @@ const options: ApexOptions = {
     show: false,
   },
 };
+
+function calculatePercentages(numbers: number[]): number[] {
+  const total: number = numbers.reduce((sum, num) => sum + num, 0);
+  return numbers.map((num) => (num / total) * 100);
+}
+
 export const ProductFunnel = () => {
+  const totalSells = productData.reduce((sum, num) => sum + num.value, 0);
+
   return (
     <div className="w-2/6 bg-white p-4 rounded text-left shadow-md relative">
       <h4 className="text-sm text-gray-400 absolute top-3">Product</h4>
       <Chart type="bar" options={options} series={series} height={240} />
-      <div className="text-gray-500 text-sm">Recently</div>
+      <div className="text-gray-500 text-sm">Top selling products:</div>
+      <ul>
+        {productData
+          .slice()
+          .sort((a, b) => b.value - a.value)
+          .slice(0, 3)
+          .map(({ name, value }) => {
+            return (
+              <li key={name}>
+                {name}
+                {(value / totalSells) * 100} %
+              </li>
+            );
+          })}
+      </ul>
     </div>
   );
 };
