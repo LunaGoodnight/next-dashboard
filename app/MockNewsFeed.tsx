@@ -20,22 +20,31 @@ export const newsList = [
     title: "Travel scams: Cyber security travel advice",
     link: "https://www.nzherald.co.nz/travel/travel-scams-cyber-security-travel-advice/4YVDTPJF6FAYZMHM6IMT7AMYTU/",
   },
+  {
+    title: "UK government sees record numbers trying to get into cybersecurity",
+    link: "https://www.neowin.net/news/uk-government-sees-record-numbers-trying-to-get-into-cybersecurity/",
+  },
 ];
 
 export const MockNewsFeed = () => {
   return (
-    <div className="bg-white p-4 rounded text-left shadow-md relative w-4/6 pt-10">
+    <div className="bg-white p-4 rounded text-left shadow-md relative w-2/6 pt-10">
       <h4 className="text-sm text-gray-400 absolute top-3">News Feed</h4>
+      <button
+        type="button"
+        className="bg-blue-300 p-2 absolute right-2 top-2 text-white text-sm rounded"
+      >
+        Edit
+      </button>
       <ul className="flex flex-col p-4 text-sm marker:text-sky-400 list-disc pl-10">
         {newsList.map(({ title, link }) => {
           return (
             <li key={link}>
               <a
-                className="hover:text-gray-700 py-2 :visited[&>div]:bg-amber-300"
+                className="hover:text-gray-700 py-8"
                 target="_blank"
                 href={link}
               >
-                <div className="h-4 w-4 bg-emerald-500"></div>
                 <h4>{title}</h4>
               </a>
             </li>
