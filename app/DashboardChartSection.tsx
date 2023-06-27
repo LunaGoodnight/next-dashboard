@@ -1,6 +1,8 @@
 "use client";
 
 import { AreaChart } from "@/app/AreaChart";
+import { NewsFeedNewYorkTimes } from "@/app/NewsFeedNewYorkTimes";
+
 import { NumberDataSection } from "@/app/NumberDataSection";
 import { RevenueBarChart } from "@/app/RevenueBarChart";
 import { VisitedDonut } from "@/app/VisitedDonut";
@@ -13,8 +15,9 @@ export const DashboardChartSection = async () => {
         <RevenueBarChart />
         <AreaChart />
       </div>
-      <div className="pt-4 w-full">
+      <div className="pt-4 w-full flex gap-4">
         <VisitedDonut />
+        <NewsFeedNewYorkTimes />
       </div>
     </div>
   );

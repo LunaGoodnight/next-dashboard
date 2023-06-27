@@ -1,22 +1,19 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const requestHeaders: HeadersInit = new Headers();
-requestHeaders.set("x-api-key", process.env.NEWS_API_KEY as string);
-
 interface NewsData {
   [k: string]: string | number | boolean;
-  link: string;
+  web_url: string;
+  _id: string;
 }
-export const NewsFeed = () => {
+export const NewsFeedNewYorkTimes = () => {
   const [news, setNews] = useState<NewsData[]>([]);
   useEffect(() => {
     const fetchNews = async () => {
       const res = await fetch(
-        "https://api.miounewscatcherapi.com/v2/search?q=fintech",
+        `https://api.nytimes.com/svc/archive/v1/2023/1.json?api-key=${process.env.NEW_YORK_API_KEY}`,
         {
           method: "GET",
-          headers: requestHeaders,
         }
       );
       if (!res) {
@@ -26,7 +23,7 @@ export const NewsFeed = () => {
     };
     fetchNews()
       .then((r) => r.json())
-      .then((list) => setNews(list.articles))
+      .then((list) => setNews(list.response.docs))
       .catch((err) => {
         console.error(err);
       });
@@ -37,10 +34,10 @@ export const NewsFeed = () => {
     <div className="bg-white p-4 rounded text-left shadow-md relative w-2/6 pt-10">
       <ul>
         {news.length
-          ? news.map(({ link, title }, index) => {
+          ? news.map(({ web_url, abstract, _id }, index) => {
               return (
-                <li key={index}>
-                  <Link href={link}>{title}</Link>
+                <li key={_id}>
+                  <Link href={web_url}>{abstract}</Link>
                 </li>
               );
             })
