@@ -12,7 +12,10 @@ const series = [
 const options: ApexOptions = {
   chart: {
     type: "bar",
-    height: 350,
+
+    toolbar: {
+      show: false,
+    },
   },
   plotOptions: {
     bar: {
@@ -33,15 +36,21 @@ const options: ApexOptions = {
     "#62ACEA",
     "#4BC3E6",
   ],
+
   dataLabels: {
+    style: {
+      fontFamily: "inherit",
+      fontWeight: 800,
+    },
     enabled: true,
     formatter: function (val, opt) {
       return opt.w.globals.labels[opt.dataPointIndex];
     },
     dropShadow: {
-      enabled: true,
+      enabled: false,
     },
   },
+
 
   xaxis: {
     categories: [
@@ -64,6 +73,7 @@ export const ProductFunnel = () => {
     <div className="w-2/6 bg-white p-4 rounded text-left shadow-md relative">
       <h4 className="text-sm text-gray-400 absolute top-3">Product</h4>
       <Chart type="bar" options={options} series={series} height={240} />
+      <div className="text-gray-500 text-sm">Recently</div>
     </div>
   );
 };
