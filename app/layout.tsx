@@ -40,12 +40,14 @@ export default function RootLayout({
         })(window,document,'script','dataLayer','${GTM_ID}');
         `}
       </Script>
-      <body className={`${inter.className}  bg-[#f6f9ff] overflow-hidden `}>
+      <body
+        className={`${inter.className}  bg-[#f6f9ff] overflow-hidden dark:bg-neutral-700`}
+      >
         <ThemeProviders>
           <SideBarContextProvider>
             <div className="text-[#7b8190]">
               <header className="flex w-full justify-between bg-white fixed top-0 z-20">
-                <div className="p-5 w-full flex justify-between dark:bg-neutral-600 shadow-md">
+                <div className="p-5 w-full flex justify-between shadow-md dark:bg-neutral-600 dark:text-gray-300">
                   <div className="flex justify-between items-center w-2/12">
                     <div className="font-bold text-indigo-900 text-3xl dark:text-yellow-300">
                       LunaAdmin

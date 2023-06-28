@@ -15,7 +15,7 @@ export const ProductFunnel = () => {
   const totalSells = productData.reduce((sum, num) => sum + num.value, 0);
 
   return (
-    <div className="w-2/6 bg-white p-4 rounded text-left shadow-md relative">
+    <div className="w-2/6 bg-white p-4 rounded text-left shadow-md relative dark:bg-neutral-600 dark:text-gray-300">
       <h4 className="text-sm text-gray-400 absolute top-3">Product sell</h4>
       <Chart
         type="bar"

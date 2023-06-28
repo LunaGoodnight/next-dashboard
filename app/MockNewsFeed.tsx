@@ -28,7 +28,7 @@ export const newsList = [
 
 export const MockNewsFeed = () => {
   return (
-    <div className="bg-white p-4 rounded text-left shadow-md relative w-2/6 pt-10">
+    <div className="bg-white p-4 rounded text-left shadow-md relative w-2/6 pt-10 dark:bg-neutral-600 dark:text-gray-300">
       <h4 className="text-sm text-gray-400 absolute top-3">News Feed</h4>
       <button
         type="button"

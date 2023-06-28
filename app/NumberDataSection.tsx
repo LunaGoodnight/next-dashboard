@@ -22,7 +22,7 @@ export const NumberDataSection = () => {
           return (
             <div
               key={title}
-              className="bg-white p-4 rounded text-left shadow-md relative"
+              className="bg-white p-4 rounded text-left shadow-md relative dark:bg-neutral-600 dark:text-gray-300"
             >
               <div className="flex items-start justify-between">
                 <h4 className="text-sm text-gray-400">{title}</h4>

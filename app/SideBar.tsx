@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const SideBar = () => {
   const { sideBarTextShow } = useSideBarContextContext();
   return (
-    <ul className="flex flex-col shadow-md pt-[5.5rem] p-2 bg-white top-[5rem] min-h-screen">
+    <ul className="flex flex-col shadow-md pt-[5.5rem] p-2 bg-white top-[5rem] min-h-screen dark:bg-neutral-600 dark:text-gray-300">
       {leftMenuList.map(({ name, icon, path }) => {
         return (
           <li key={name}>
