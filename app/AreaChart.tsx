@@ -41,7 +41,7 @@ const options: ApexOptions = {
 const series = [
   {
     name: "Series 1",
-    data: [45, 52, 38, 45, 19, 23, 2],
+    data: [2, 23, 19, 48, 38, 52, 45],
   },
 ];
 export const AreaChart = () => {
