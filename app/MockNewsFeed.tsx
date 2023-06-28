@@ -41,7 +41,7 @@ export const MockNewsFeed = () => {
           return (
             <li key={link}>
               <a
-                className="hover:text-gray-700 py-2 block"
+                className="hover:text-gray-700 py-2 block dark:hover:text-gray-400"
                 target="_blank"
                 href={link}
               >

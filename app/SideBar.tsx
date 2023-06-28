@@ -1,10 +1,9 @@
 "use client";
 
-import { useSideBarContextContext } from "@/app/useSideBarContextContext";
 import Link from "next/link";
-import { leftMenuList } from "@/app/_config/leftMenuList";
-
+import { useSideBarContextContext } from "@/app/useSideBarContextContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { leftMenuList } from "@/app/_config/leftMenuList";
 
 export const SideBar = () => {
   const { sideBarTextShow } = useSideBarContextContext();
