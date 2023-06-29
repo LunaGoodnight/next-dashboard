@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 interface User {
   username: string;
   id: number;
@@ -22,7 +20,7 @@ export const DummyUsers = async () => {
           data.users.slice(0, 8).map(({ username, id, image }: User) => {
             return (
               <li key={id} className="flex gap-2 items-center justify-start">
-                <Image
+                <img
                   className="rounded-lg"
                   src={image}
                   width={50}
