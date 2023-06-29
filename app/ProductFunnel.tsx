@@ -23,7 +23,7 @@ export const ProductFunnel = () => {
         series={series}
         height={240}
       />
-      <div className="text-gray-500 text-sm pb-2">Top selling products:</div>
+      <div className="text-gray-400 text-sm pb-2">Top selling products:</div>
       <ul className="text-sm">
         {productData
           .slice()
