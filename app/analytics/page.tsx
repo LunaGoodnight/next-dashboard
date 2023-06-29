@@ -10,6 +10,7 @@ export default function Home() {
         <MonthlySalesBarChart />
         <DummyUsers />
       </div>
+      <p>Under construction</p>
     </main>
   );
 }
