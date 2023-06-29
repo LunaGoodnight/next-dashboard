@@ -17,7 +17,7 @@ import {
 
 export const leftMenuList = [
   { name: "Dashboard", icon: faChartBar, path: "/" },
-  { name: "Analytics", icon: faMap, path: "/" },
+  { name: "Analytics", icon: faMap, path: "/analytics" },
   { name: "Calendar", icon: faCalendarDays, path: "/" },
   { name: "CRM", icon: faChartBar, path: "/" },
   { name: "E commerce", icon: faCartShopping, path: "/" },

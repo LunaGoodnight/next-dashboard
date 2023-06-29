@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const NumberDataSection = () => {
   return (
-    <div className="grid gap-4 grid-cols-2 w-2/4">
+    <div className="grid gap-4 grid-cols-2 md:w-2/4 sm:w-full">
       {numberData.map(
         ({
           title,
@@ -32,11 +32,11 @@ export const NumberDataSection = () => {
                   <FontAwesomeIcon icon={icon} />
                 </div>
               </div>
-              <div className="text-2xl font-bold pt-3">
+              <div className="text-2xl font-bold py-3">
                 {isMoney && "$ "}
                 {thisMonth}
               </div>
-              <div className="text-xs flex gap-2 absolute bottom-4">
+              <div className="text-xs flex gap-2">
                 <i
                   className={`${
                     isIncrease

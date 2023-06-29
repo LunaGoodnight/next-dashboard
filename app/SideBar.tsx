@@ -12,7 +12,10 @@ export const SideBar = () => {
       {leftMenuList.map(({ name, icon, path }) => {
         return (
           <li key={name}>
-            <Link href={path} className="flex p-3 rounded hover:bg-gray-50">
+            <Link
+              href={path}
+              className="flex p-3 rounded hover:bg-gray-50 dark:hover:bg-gray-700"
+            >
               <div className="w-6">
                 <FontAwesomeIcon className="text-[#adb4d2]-500" icon={icon} />
               </div>

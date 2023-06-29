@@ -32,7 +32,7 @@ export const MockNewsFeed = () => {
       <h4 className="text-sm text-gray-400 absolute top-3">News Feed</h4>
       <button
         type="button"
-        className="absolute right-3 top-3 text-sm rounded text-gray-500 cursor-pointer"
+        className="absolute right-3 top-3 text-sm rounded text-gray-400 text-gray-500 cursor-pointer"
       >
         Edit
       </button>

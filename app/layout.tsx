@@ -1,3 +1,4 @@
+import { Header } from "@/app/Header";
 import { HideMenuButton } from "@/app/HideMenuButton";
 import { Notification } from "@/app/Notification";
 import ThemeProviders from "@/app/ThemeProviders";
@@ -46,25 +47,7 @@ export default function RootLayout({
         <ThemeProviders>
           <SideBarContextProvider>
             <div className="text-[#7b8190]">
-              <header className="flex w-full justify-between bg-white fixed top-0 z-20">
-                <div className="p-5 w-full flex justify-between shadow-md dark:bg-neutral-600 dark:text-gray-300">
-                  <div className="flex justify-between items-center w-2/12">
-                    <div className="font-bold text-indigo-900 text-3xl dark:text-yellow-300">
-                      LunaAdmin
-                    </div>
-                    <HideMenuButton />
-                  </div>
-                  <nav className="flex gap-5 items-center">
-                    <SearchBlock />
-                    <ThemeButton />
-                    <Notification />
-                    <FontAwesomeIcon
-                      className="text-[#adb4d2]-500"
-                      icon={faCircleUser}
-                    />
-                  </nav>
-                </div>
-              </header>
+              <Header />
               <div className="flex w-full min-h-screen">
                 <SideBar />
                 {children}
