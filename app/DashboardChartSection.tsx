@@ -10,7 +10,7 @@ import { VisitedDonut } from "@/app/VisitedDonut";
 
 export const DashboardChartSection = async () => {
   return (
-    <div className="flex w-full flex-wrap">
+    <div className="flex w-full flex-wrap pt-4">
       <NumberDataSection />
       <div className="grid gap-4 grid-cols-2 w-2/4 pl-4">
         <RevenueBarChart />
