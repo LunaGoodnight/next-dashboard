@@ -23,6 +23,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Next Dashboard",
   description: "Dashboard wrote in Next.js",
+  metadataBase: new URL("https://next-dashboard.pinkjelly.org/"),
 };
 
 export default function RootLayout({
