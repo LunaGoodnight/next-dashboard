@@ -8,7 +8,7 @@ import { leftMenuList } from "@/app/_config/leftMenuList";
 export const SideBar = () => {
   const { sideBarTextShow } = useSideBarContextContext();
   return (
-    <ul className="flex flex-col shadow-md pt-[5.5rem] p-2 bg-white top-[5rem] min-h-screen dark:bg-neutral-600 dark:text-gray-300">
+    <ul className="flex-col shadow-md pt-[5.5rem] p-2 bg-white top-[5rem] min-h-screen dark:bg-neutral-600 dark:text-gray-300 sm:flex hidden">
       {leftMenuList.map(({ name, icon, path }) => {
         return (
           <li key={name}>

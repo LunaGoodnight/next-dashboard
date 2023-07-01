@@ -15,7 +15,7 @@ export const Header = () => {
           </div>
           <HideMenuButton />
         </div>
-        <nav className="flex gap-5 items-center">
+        <nav className="gap-5 items-center sm:flex hidden">
           <SearchBlock />
           <ThemeButton />
           <Notification />

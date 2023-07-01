@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const NumberDataSection = () => {
   return (
-    <div className="grid gap-4 grid-cols-2 md:w-2/4 sm:w-full">
+    <div className="grid gap-4 grid-cols-2 sm:w-2/4 w-full">
       {numberData.map(
         ({
           title,
