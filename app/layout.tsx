@@ -1,18 +1,13 @@
 import { Header } from "@/app/Header";
-import { HideMenuButton } from "@/app/HideMenuButton";
-import { Notification } from "@/app/Notification";
 import ThemeProviders from "@/app/ThemeProviders";
-import { SearchBlock } from "@/app/SearchBlock";
 import { SideBar } from "@/app/SideBar";
 import { SideBarContextProvider } from "@/app/SideBarContextProvider";
-import { ThemeButton } from "@/app/ThemeButton";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+
 const GTM_ID = "GTM-W7FMR2M";
 
 config.autoAddCss = false;
