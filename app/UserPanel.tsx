@@ -14,7 +14,9 @@ export const UserPanel = () => {
         <li className="p-2 border border-b-gray-300 dark:border-b-gray-600 w-full">
           Settings
         </li>
-        <li className="p-2 w-full">Logout</li>
+        <li className="p-2 border border-b-gray-300 dark:border-b-gray-600 w-full">
+          Logout
+        </li>
       </ul>
     </div>
   );
