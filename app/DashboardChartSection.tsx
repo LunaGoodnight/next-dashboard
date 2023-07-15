@@ -8,15 +8,17 @@ import { ProductFunnel } from "@/app/ProductFunnel";
 import { RevenueBarChart } from "@/app/RevenueBarChart";
 import { VisitedDonut } from "@/app/VisitedDonut";
 
-export const DashboardChartSection = async () => {
+export const DashboardChartSection = () => {
   return (
-    <div className="flex w-full flex-wrap pt-4 gap-4">
-      <NumberDataSection />
-      <div className="grid gap-4 grid-cols-2 w-2/4">
-        <RevenueBarChart />
-        <AreaChart />
+    <div className="w-full pt-4">
+      <div className="flex gap-4 w-full">
+        <NumberDataSection />
+        <div className="grid gap-4 grid-cols-2 sm:w-2/4 w-full">
+          <RevenueBarChart />
+          <AreaChart />
+        </div>
       </div>
-      <div className="pt-4 w-full flex gap-4">
+      <div className="w-full flex gap-4 pt-4">
         <VisitedDonut />
         <MockNewsFeed />
         <ProductFunnel />
