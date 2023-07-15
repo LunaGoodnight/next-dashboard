@@ -2,6 +2,7 @@ import { HideMenuButton } from "@/app/HideMenuButton";
 import { Notification } from "@/app/Notification";
 import { SearchBlock } from "@/app/SearchBlock";
 import { ThemeButton } from "@/app/ThemeButton";
+import { UserPanel } from "@/app/UserPanel";
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -19,7 +20,7 @@ export const Header = () => {
           <SearchBlock />
           <ThemeButton />
           <Notification />
-          <FontAwesomeIcon className="text-[#adb4d2]-500" icon={faCircleUser} />
+          <UserPanel />
         </nav>
       </div>
     </header>
