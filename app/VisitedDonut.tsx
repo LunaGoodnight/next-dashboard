@@ -23,6 +23,9 @@ const options: ApexOptions = {
   stroke: {
     show: false,
   },
+  tooltip: {
+    cssClass: "apexChartTooltip",
+  },
 };
 export const VisitedDonut = () => {
   return (

@@ -63,6 +63,9 @@ const options: ApexOptions = {
     "November",
     "December",
   ],
+  tooltip: {
+    cssClass: "apexChartTooltip",
+  },
 };
 
 const series = [

@@ -64,4 +64,7 @@ export const productFunnelOptions: Options = {
   legend: {
     show: false,
   },
+  tooltip: {
+    cssClass: "apexChartTooltip",
+  },
 };

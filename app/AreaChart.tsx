@@ -37,6 +37,9 @@ const options: ApexOptions = {
       },
     },
   },
+  tooltip: {
+    cssClass: "apexChartTooltip",
+  },
 };
 const series = [
   {

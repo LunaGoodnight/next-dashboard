@@ -47,6 +47,9 @@ const options: ApexOptions = {
   legend: {
     show: false,
   },
+  tooltip: {
+    cssClass: "apexChartTooltip",
+  },
 };
 export const RevenueBarChart = () => {
   return (
